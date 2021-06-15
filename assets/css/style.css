@@ -3,6 +3,7 @@ Table of Contents
 
 * 1.0 Reset
 * 2.0 Globals
+* 3.0 Header
 
 ********************/
 
@@ -31,4 +32,72 @@ a {
 /* set paragraph element font size to 16px */
 p {
     font-size: 16px;
+}
+
+/******************/
+/*** 3.0 Header ***/
+/******************/
+
+/* add space around header */
+/* set header font and background color */
+.header {
+    padding: 20px 0px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    background-color: #3D5A80;
+    color: #ffffff;
+}
+
+/* give developer name red background */
+/* add spacing around developer name and set max width to content */
+.header h1 {
+    background-color: #EE6C4D;
+    display: inline-block;
+    font-size: 48px;
+    padding: 5px 20px 5px 60px;
+    margin: 0px;
+    max-width: max-content;
+}
+
+/* add space around nav */
+/* position nav on right of header */
+.header nav {
+    padding-top: 15px;
+    padding-left: 15px;
+    margin-right: 20px;
+    float: right;
+    font-size: 20px;
+}
+
+/* remove bullets from unordered list */
+.header ul {
+    list-style-type: none;
+}
+
+/* make list items appear on one line */
+.header ul li {
+    display: inline-block;
+    padding-bottom: 5px;
+    text-decoration: underline;
+    margin: 10px;
+    text-underline-offset: 5px;
+}
+
+/* make nav links light blue on hover */
+.header ul li a:hover {
+    color: #E0FBFC;
+}
+
+/* Smartphones - navbar displays as column */
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .header ul li {
+        margin: 5px;
+    }
 }
