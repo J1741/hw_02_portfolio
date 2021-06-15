@@ -5,9 +5,10 @@ Table of Contents
 * 2.0 Globals
 * 3.0 Header
 * 4.0 Banner
-* 5.1 Main: About Me 
-* 5.2 Main: Work
-* 6.0 Main: Contact Me
+* 5.0 Main
+*     5.1 Main: About Me 
+*     5.2 Main: Work
+*     5.3 Main: Contact Me
 * Media Queries
 
 ********************/
@@ -38,6 +39,11 @@ body {
 /* resetting heading font sizes */
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
+}
+
+/* remove bullet styling from lists */
+ul, ol {
+    list-style-type: none;
 }
   
 /*******************/
@@ -89,11 +95,6 @@ p {
     font-size: 20px;
 }
 
-/* remove bullets from unordered list */
-.header ul {
-    list-style-type: none;
-}
-
 /* make list items appear on one line */
 .header ul li {
     display: inline-block;
@@ -137,6 +138,7 @@ p {
     margin: 0px 20px 0px 0px;
     padding: 5px 20px 5px 20px; 
 }
+
 /****************/
 /*** 5.0 Main ***/
 /****************/
@@ -159,6 +161,7 @@ p {
     margin: 10px 15px 10px 100px;
     border-right: 3.5px solid #3D5A80;
     min-width: 200px;
+    max-width: 200px;
 }
 
 /* make full section content take 100% of container */
@@ -211,15 +214,50 @@ p {
     margin: 10px;
 }
 
+/****************************/
+/*** 5.3 Main: Contact Me ***/
+/****************************/
+
+/* set footer font */
+/* add space around footer */
+.footer {
+    padding: 20px 0px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+/* add space around footer list, set font size */
+.footer ul {
+    padding-top: 15px;
+    padding-left: 15px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+/* style footer list items */
+.footer ul li {
+    padding-bottom: 5px;
+    text-decoration: underline;
+    margin: 10px;
+    text-underline-offset: 5px;
+}
+
+/* set footer anchor tags to dark blue */
+.footer ul li a {
+    color: #3D5A80;
+}
+
 /**********************/
 /*** Media Queries ***/
 /**********************/
 
 /* Smartphone - responsiveness
-- navbar displays as column
-- banner figure is hidden
-- about-me, work sections shift to column */
+- navbar displays as column and shifts to right
+- banner is hidden
+- about-me, work sections shift to column
+- main headings and main sections shift to left
+- margins are narrowed appropriately */
 @media screen and (max-width: 768px) {
+
     header {
         display: flex;
         flex-direction: column;
@@ -228,6 +266,7 @@ p {
     nav ul {
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
     }
 
     .header ul li {
@@ -240,13 +279,15 @@ p {
 
     .main-section {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .main-heading {
-        text-align: right;
+        text-align: left;
         margin: 5px 20px 5px 5px;
         border-right-style: none;
         border-bottom: 3.5px solid #3D5A80;
+        min-width: 315px;
     } 
 
     .about-me-text {
