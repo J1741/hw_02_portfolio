@@ -190,6 +190,23 @@ p {
    width: 85%;
 }
 
+/* set position to relative to allow for absolute placement of child */
+.application-top {
+    position: relative;
+}
+
+/* adding figcaption to top image */
+.application-top-caption {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #3D5A80;
+    margin: 0px 20px 0px 0px;
+    padding: 5px 20px 5px 20px; 
+}
+
 /* make application top image take up 85% of container */
 .application-top-image {
     width: 85%;
@@ -197,20 +214,37 @@ p {
 }
 
 /* set dimenions of application sub section */
-/* NB: Disabled flex as it was not needed to position the images */
+/* switching application sub section to display flex */
 .application-sub {
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; */
-    width: 102%;
-    max-height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* set sub wrap position to relative to allow for absolute placement of child */
+.application-sub-wrap {
+    position: relative;
+}
+
+/* add figcaption to sub image */
+.application-sub-caption {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #3D5A80;
+    margin: 0px 20px 0px 0px;
+    padding: 5px 20px 5px 20px; 
 }
 
 /* make application sub images take up 40% of container */
 .application-sub-image {
-    max-width: 40%;
+    /* max-width: 40%; */
     /* max-width: 300px; */
     /* margin: 10px 100px 10px 10px; */
+    min-width: 40%;
+    max-width: 300px;
     margin: 10px;
 }
 
